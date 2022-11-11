@@ -72,7 +72,7 @@ def dict_remove_self(dic):
     for node in dic1:
         if node in dic1[node]:
             dic1[node].remove(node)
-        if not dic1[node]:  # 如果去电self之后为空集，则删除该点
+        if not dic1[node]:
             todeletes.append(node)
     for todelete in todeletes:
         del dic1[todelete]
@@ -182,34 +182,6 @@ def get_maxOverlap(elist1, elist2, method="MinDeg"):
     Returns
     -------
     maxOverlap: The possible maxOverlap between two given networks.
-    '''
-    '''
-    if method == "MinDeg":
-        dict1 = formatting.edgelist_to_neighborhood(elist1)
-        dict2 = formatting.edgelist_to_neighborhood(elist2)
-        degree1 = random_subnetwork.cal_node_degree(dict1)
-        degree2 = random_subnetwork.cal_node_degree(dict2)
-        commonNodes = get_common_nodes(elist1,elist2)
-        degree = {}
-        for node in commonNodes:
-            degree[node] = min(degree1[node],degree2[node])
-        maxOverlap = sum(degree.values())/2
-
-    if method == "MinDeg":
-        commonNodes = get_common_nodes(elist1,elist2)
-        elist1_com = [pair for pair in elist1 if (
-            pair[0] in commonNodes) and (pair[1] in commonNodes)]
-        elist2_com = [pair for pair in elist2 if (
-            pair[0] in commonNodes) and (pair[1] in commonNodes)]
-        degree1 = random_subnetwork.cal_node_degree(elist1_com)
-        degree2 = random_subnetwork.cal_node_degree(elist2_com)
-        degree = {}
-        for node in commonNodes:
-            if node in degree1 and node in degree2:
-                degree[node] = min(degree1[node],degree2[node])
-            else:
-                degree[node]=0
-        maxOverlap = sum(degree.values())/2
     '''
 
     if method == "MinDeg":  # keep the self-interactions
