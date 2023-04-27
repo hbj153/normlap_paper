@@ -4,7 +4,7 @@ This is the repository for the "A positive statistical benchmark to assess netwo
 
 Cite the code: [![DOI](https://zenodo.org/badge/564871060.svg)](https://zenodo.org/badge/latestdoi/564871060)
 
-For the package oublished together with the study, please refer to [![DOI](https://zenodo.org/badge/488374095.svg)](https://zenodo.org/badge/latestdoi/488374095).
+For the package published together with the study, please refer to [![DOI](https://zenodo.org/badge/488374095.svg)](https://zenodo.org/badge/latestdoi/488374095).
 
 ***
 
